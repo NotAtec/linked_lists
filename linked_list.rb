@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Class that contains the linked list methods, each instance contains the head of the list.
 class LinkedList
   attr_reader :head
 
@@ -85,6 +88,7 @@ class LinkedList
   end
 end
 
+# Class the elements of a linked list are made of
 class Node
   attr_accessor :value, :next_node
 
