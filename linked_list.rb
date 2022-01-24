@@ -111,6 +111,22 @@ class LinkedList
     string << 'nil'
     string
   end
+
+  def insert_at(value, index)
+    # Loop (index) times + 1x
+    # Keep last 2 nodes
+    # Create node with (value)
+    # Map node to last kept node
+    # Map 2nd last node to new node
+  end
+
+  def remove_at(index)
+    # Loop (index) times + 2 times
+    # Keep last 3 nodes.
+    # Delete node at index (middle one)
+    # Remap 1st next_node to 3rd node
+    # If nothing exists at index, return nil
+  end
 end
 
 # Class the elements of a linked list are made of
