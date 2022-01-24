@@ -40,17 +40,18 @@ class LinkedList
   end
 
   def tail
-    # Loop until .next_node == nil
-    # Return node
     temp = @head
     temp = temp.next_node until temp.next_node.nil?
     temp
   end
 
   def at(index)
-    # Get next node index + 1 times
-    # If nil is returned, return nil (/ Throw error)
-    # if value is found, return value
+    temp = @head
+    index.times do
+      temp = temp.next_node
+      return nil if temp.nil?
+    end
+    temp
   end
 
   def pop
