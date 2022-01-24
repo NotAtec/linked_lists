@@ -88,11 +88,15 @@ class LinkedList
   end
 
   def find(value)
-    # Loop indef
-    # Set iterator to 0
-    # Get next node, check Node.value for value; if match -> Return iterator
-    # Add 1 to iterator, continue to next node until match is found
-    # If no match is found && Next node returns nil -> return nil
+    i = 0
+    temp = @head
+    loop do
+      return nil if temp.nil?
+      return i if temp.value == value
+
+      temp = temp.next_node
+      i += 1
+    end
   end
 
   def to_s
