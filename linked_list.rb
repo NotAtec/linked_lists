@@ -1,4 +1,6 @@
 class LinkedList
+  attr_reader :head
+
   def initalize
     @head = nil
   end
@@ -35,10 +37,6 @@ class LinkedList
       i += 1
       temp = temp.next_node
     end
-  end
-
-  def head
-    @head
   end
 
   def tail
