@@ -79,6 +79,8 @@ class LinkedList
     temp = @head
     until temp.nil?
       return true if temp.value == value
+
+      temp = temp.next_node
     end
     false
   end
