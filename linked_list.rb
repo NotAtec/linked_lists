@@ -27,10 +27,14 @@ class LinkedList
   end
 
   def size
-    # Loop infinitely
-    # Add 1 for each iteration
-    # If nil is returned, end loop & Return value
-    # If node is returned, continue onto next node
+    i = 0
+    temp = @head
+    loop do
+      return i if temp.nil?
+
+      i += 1
+      temp = temp.next_node
+    end
   end
 
   def head; end
