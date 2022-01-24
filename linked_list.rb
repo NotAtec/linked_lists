@@ -20,7 +20,7 @@ class LinkedList
   end
 
   def head; end
-  
+
   def tail; end
 
   def at(index)
@@ -36,7 +36,7 @@ class LinkedList
     # Kill last node
     # Remap 2nd to last node to nil to indicate tail
   end
-  
+
   def contains?(value)
     # Loop indef
     # get next node, check Node.value for value; if match -> True
@@ -63,7 +63,7 @@ end
 class Node
   attr_accessor :value
 
-  def initialize(value)
+  def initialize(value = nil)
     @value = value
     @next_node = nil
   end
