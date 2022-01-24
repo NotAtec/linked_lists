@@ -60,9 +60,7 @@ class LinkedList
   def pop
     temp = @head
     second = nil
-    loop do
-      return nil if temp.nil?
-
+    until temp.nil?
       if temp.next_node.nil?
         second.next_node = nil unless second.nil?
         return temp
@@ -73,9 +71,6 @@ class LinkedList
   end
 
   def contains?(value)
-    # Loop indef
-    # get next node, check Node.value for value; if match -> True
-    # If no match && next node returns nil -> False
     temp = @head
     until temp.nil?
       return true if temp.value == value
