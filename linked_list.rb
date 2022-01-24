@@ -100,11 +100,16 @@ class LinkedList
   end
 
   def to_s
-    # Setup empty string
-    # Loop until next returns nil
-    # Each iteration, add Node.value to string
-    # Then add ' -> ' to string until loop is exited
-    # Return string
+    string = String.new
+    temp = @head
+
+    until temp.nil?
+      string << temp.value.inspect
+      string << ' -> '
+      temp = temp.next_node
+    end
+    string << 'nil'
+    string
   end
 end
 
