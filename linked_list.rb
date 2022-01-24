@@ -37,9 +37,17 @@ class LinkedList
     end
   end
 
-  def head; end
+  def head
+    @head
+  end
 
-  def tail; end
+  def tail
+    # Loop until .next_node == nil
+    # Return node
+    temp = @head
+    temp = temp.next_node until temp.next_node.nil?
+    temp
+  end
 
   def at(index)
     # Get next node index + 1 times
