@@ -76,6 +76,11 @@ class LinkedList
     # Loop indef
     # get next node, check Node.value for value; if match -> True
     # If no match && next node returns nil -> False
+    temp = @head
+    until temp.nil?
+      return true if temp.value == value
+    end
+    false
   end
 
   def find(value)
