@@ -60,8 +60,15 @@ class LinkedList
   def pop
     temp = @head
     second = nil
+
     until temp.nil?
       if temp.next_node.nil?
+        if temp == @head
+          temp = @head
+          @head = nil
+          return temp
+        end
+
         second.next_node = nil unless second.nil?
         return temp
       end
