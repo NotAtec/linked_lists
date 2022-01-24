@@ -58,11 +58,18 @@ class LinkedList
   end
 
   def pop
-    # Loop infinitely
-    # Keep 2nd to last & last node & next node, repeat
-    # When next node == nil:
-    # Kill last node
-    # Remap 2nd to last node to nil to indicate tail
+    temp = @head
+    second = nil
+    loop do
+      return nil if temp.nil?
+
+      if temp.next_node.nil?
+        second.next_node = nil unless second.nil?
+        return temp
+      end
+      second = temp
+      temp = temp.next_node
+    end
   end
 
   def contains?(value)
