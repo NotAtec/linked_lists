@@ -10,15 +10,20 @@ class LinkedList
       @head = temp
     else
       node = @head
-      node = node.next_node while !node.next_node.nil?
+      node = node.next_node until node.next_node.nil?
       node.next_node = temp
     end
   end
 
   def prepend(value)
-    # Grab old 1st node
-    # Create new node
-    # Point new node to old 1st node
+    temp = Node.new(value)
+
+    unless @head.nil?
+      n = @head
+      temp.next_node = n
+    end
+
+    @head = temp
   end
 
   def size
