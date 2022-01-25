@@ -57,7 +57,7 @@ class LinkedList
     temp
   end
 
-  def pop
+  def pop # TD: Add code to kill popped instance
     temp = @head
     second = nil
 
@@ -121,11 +121,24 @@ class LinkedList
   end
 
   def remove_at(index)
-    # Loop (index) times + 2 times
-    # Keep last 3 nodes.
-    # Delete node at index (middle one)
-    # Remap 1st next_node to 3rd node
-    # If nothing exists at index, return nil
+    remap = @head
+    to_delete = nil
+    origin = nil
+
+    (index + 1).times do
+      return nil if remap.nil?
+
+      origin = to_delete
+      to_delete = remap
+      remap = remap.next_node
+    end
+
+    # TD: Add code to actually kill to_delete
+    if origin.nil?
+      @head = remap
+    else
+      origin.next_node = remap
+    end
   end
 end
 
