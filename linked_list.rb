@@ -159,9 +159,3 @@ class Node
     @next_node = nil
   end
 end
-
-def setup
-  t = LinkedList.new
-  5.times { |x| t.append(x) }
-  t
-end
