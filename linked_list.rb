@@ -57,20 +57,20 @@ class LinkedList
     temp
   end
 
-  def pop # TD: Add code to kill popped instance
+  def pop
     temp = @head
     second = nil
 
-    until temp.nil?
+    loop do
       if temp.next_node.nil?
         if temp == @head
           temp = @head
           @head = nil
-          return temp
+          return temp.value
         end
 
         second.next_node = nil unless second.nil?
-        return temp
+        return temp.value
       end
       second = temp
       temp = temp.next_node
@@ -141,12 +141,12 @@ class LinkedList
       remap = remap.next_node
     end
 
-    # TD: Add code to actually kill to_delete
     if origin.nil?
       @head = remap
     else
       origin.next_node = remap
     end
+    to_delete.value
   end
 end
 
@@ -158,4 +158,10 @@ class Node
     @value = value
     @next_node = nil
   end
+end
+
+def setup
+  t = LinkedList.new
+  5.times { |x| t.append(x) }
+  t
 end
