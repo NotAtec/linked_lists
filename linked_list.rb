@@ -113,11 +113,19 @@ class LinkedList
   end
 
   def insert_at(value, index)
-    # Loop (index) times + 1x
-    # Keep last 2 nodes
-    # Create node with (value)
-    # Map node to last kept node
-    # Map 2nd last node to new node
+    temp = @head
+    remap = nil
+    newest = Node.new(value)
+
+    index.times do
+      raise "Index is unreachable, max index to insert at is #{size}" if temp.nil?
+
+      remap = temp
+      temp = temp.next_node
+    end
+
+    newest.next_node = temp
+    index.zero? ? @head = newest : remap.next_node = newest
   end
 
   def remove_at(index)
