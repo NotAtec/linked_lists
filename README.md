@@ -1,5 +1,5 @@
 # Linked List
-An implementation of the [Linked List]() Datastructure in Ruby. 
+An implementation of the [Linked List](https://en.wikipedia.org/wiki/Linked_list) Datastructure in Ruby. 
 
 Implemented to a [spec](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-programming/lessons/linked-lists#assignment) assigned by [The Odin Project](https://www.theodinproject.com/)
 
